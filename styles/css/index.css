@@ -10501,9 +10501,8 @@ readers do not read off random characters that represent icons */
   align-items: center;
 }
 .header .container .logoColumn {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: block;
+  position: relative;
   width: 30%;
   height: 100px;
 }
@@ -10527,8 +10526,14 @@ readers do not read off random characters that represent icons */
   justify-items: center;
   align-items: center;
 }
-.footer .container .loginSection .fal {
-  padding: 0 15px;
+.footer .container .copyright {
+  padding: 14px 15px;
+}
+.footer .container .loginSection a {
+  color: #181818;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 15px;
 }
 
 /*# sourceMappingURL=index.css.map */

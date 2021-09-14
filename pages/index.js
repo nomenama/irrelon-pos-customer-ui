@@ -19,7 +19,7 @@ export default function Home () {
 
 			<Header brand="shop" href="/"/>
 
-			<Footer />
+			{/*<Footer />*/}
 
 		</Screen>
 	);

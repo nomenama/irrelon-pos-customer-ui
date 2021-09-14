@@ -17,7 +17,7 @@ const Footer = () => {
 				<Column className="loginSection">
 					<Link href="/">
 						<a>
-							<span className="fal fa-sign-in-alt fa-2x"/>
+							Sign In{/*<span className="fal fa-sign-in-alt fa-2x"/>*/}
 						</a>
 					</Link>
 				</Column>

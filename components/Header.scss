@@ -11,9 +11,8 @@
     align-items: center;
 
     .logoColumn {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      display: block;
+      position: relative;
       width: 30%;
       height: 100px;
     }

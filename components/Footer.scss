@@ -12,10 +12,17 @@
     justify-items: center;
     align-items: center;
 
+    .copyright {
+      padding: 14px 15px;
+    }
+
     .loginSection {
 
-      .fal {
-        padding: 0 15px;
+      a {
+        color: #181818;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 14px 15px;
       }
     }
   }
