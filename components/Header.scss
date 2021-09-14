@@ -1,0 +1,30 @@
+@import "../styles/css/base/BaseTheme";
+
+.header {
+  width: 100%;
+  background-color: $base-color;
+
+  .container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logoColumn {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 30%;
+      height: 100px;
+    }
+
+    .cart {
+      display: flex;
+      justify-content: space-between;
+
+      .far {
+        padding: 15px;
+      }
+    }
+  }
+}

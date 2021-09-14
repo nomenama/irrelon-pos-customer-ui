@@ -1,0 +1,65 @@
+.desktop {
+	display: none;
+}
+
+.tablet {
+	display: none;
+}
+
+.phone {
+	display: flex;
+}
+
+.notDesktop, .mobile {
+	display: flex;
+}
+
+.notDesktop.block, .mobile.block {
+	display: block;
+}
+
+@media screen and (max-width: 1024px) {
+	.tablet {
+		display: flex;
+	}
+
+	.phone {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 623px) {
+	.tablet {
+		display: none;
+	}
+
+	.phone {
+		display: flex;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.desktop {
+		display: flex;
+	}
+
+	.desktop.block {
+		display: block;
+	}
+
+	.tablet {
+		display: none;
+	}
+
+	.phone {
+		display: none;
+	}
+
+	.notDesktop {
+		display: none;
+	}
+
+	.notDesktop.block {
+		display: none;
+	}
+}
