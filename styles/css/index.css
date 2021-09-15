@@ -10536,4 +10536,121 @@ readers do not read off random characters that represent icons */
   padding: 14px 15px;
 }
 
+.menu {
+  width: 100%;
+  margin: 50px 0;
+  background-color: #ffffff;
+}
+.menu .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.menu .container .menuItem {
+  padding: 10px;
+  border: 1px solid #a1a1a1;
+  box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+}
+.menu .container .menuItem .itemRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100% 1fr max-content;
+}
+.menu .container .menuItem .itemRow .imageColumn {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  object-fit: fill;
+}
+.menu .container .menuItem .itemRow .imageColumn img {
+  width: 100%;
+  height: 100%;
+}
+.menu .container .menuItem .itemRow .itemDescription {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.menu .container .menuItem .itemRow .itemDescription .menuName {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+.menu .container .menuItem .itemRow .itemDescription .menuDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  max-height: 90px;
+  max-width: 450px;
+  margin: 10px 0;
+}
+.menu .container .menuItem .itemRow .itemDescription .menuPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.menu .container .menuItem .itemRow .itemDescription .menuPrice p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #969699;
+  margin: 0;
+  padding: 5px 0;
+}
+.menu .container .menuItem .itemRow .itemDescription .menuPrice .addButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 20px;
+  background-color: #f1b737;
+  color: #ffffff;
+  border-radius: 25px;
+  border: none;
+}
+.menu .container .menuItem .selectionRow {
+  margin: 20px 0;
+}
+.menu .container .menuItem .selectionRow .choicesTitle {
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f1b737;
+}
+.menu .container .menuItem .selectionRow .choicesForm {
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+.menu .container .menuItem .selectionRow .choicesForm .selectionColumn p {
+  text-align: start;
+  font-weight: 600;
+}
+.menu .container .menuItem .selectionRow .choicesForm .selectionColumn .itemSelection {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .container .menuItem .selectionRow .choicesForm .selectionColumn .itemSelection .itemName input {
+  margin: 15px;
+}
+.menu .container .menuItem .selectionRow .choicesForm .selectionColumn .itemSelection .itemName label {
+  margin: 15px 0;
+}
+.menu .container .menuItem .selectionRow .choicesForm .selectionColumn .itemSelection .itemPrice {
+  margin: 15px;
+  font-weight: 500;
+  color: #969699;
+}
+.menu .container .menuItem .selectionRow button {
+  width: 80%;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 50px;
+  color: #ffffff;
+  background-color: #f1b737;
+  border: none;
+  border-radius: 25px;
+}
+
 /*# sourceMappingURL=index.css.map */

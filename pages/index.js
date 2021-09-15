@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Image from "next/image";
+import Menu from "../components/Menu";
 import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -18,6 +18,8 @@ export default function Home () {
 			</Head>
 
 			<Header brand="shop" href="/"/>
+
+			<Menu />
 
 			{/*<Footer />*/}
 
