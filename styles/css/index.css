@@ -10515,8 +10515,12 @@ readers do not read off random characters that represent icons */
   color: #ffffff;
 }
 
+/**
+Add 1024, 850 and 400px breakpoints
+ */
 .footer {
   background-color: #f1b737;
+  color: #ffffff;
   width: 100%;
   height: 50px;
 }
@@ -10528,15 +10532,23 @@ readers do not read off random characters that represent icons */
   align-items: center;
 }
 .footer .container .copyright {
-  padding: 14px 15px;
+  font-size: 16px;
 }
 .footer .container .loginSection a {
-  color: #181818;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  padding: 14px 15px;
+  color: #ffffff;
+  padding: 14px 0;
 }
 
+@media screen and (max-width: 400px) {
+  .footer .container .copyright {
+    font-size: 12px;
+  }
+  .footer .container .loginSection a {
+    font-size: 12px;
+  }
+}
 .menu {
   width: 100%;
   margin: 50px 0;
@@ -10551,8 +10563,8 @@ readers do not read off random characters that represent icons */
 }
 .menu .container .menuItem {
   padding: 10px;
-  border: 1px solid #a1a1a1;
-  box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+  border-radius: 5px;
+  box-shadow: -2px 2px 4px rgba(75, 74, 74, 0.5);
 }
 .menu .container .menuItem .itemRow {
   display: grid;
@@ -10560,14 +10572,15 @@ readers do not read off random characters that represent icons */
   grid-template-rows: 100% 1fr max-content;
 }
 .menu .container .menuItem .itemRow .imageColumn {
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   padding: 10px;
-  object-fit: fill;
 }
 .menu .container .menuItem .itemRow .imageColumn img {
   width: 100%;
   height: 100%;
+  object-fit: fill;
+  object-position: center;
 }
 .menu .container .menuItem .itemRow .itemDescription {
   display: flex;
@@ -10580,12 +10593,12 @@ readers do not read off random characters that represent icons */
   padding-bottom: 10px;
 }
 .menu .container .menuItem .itemRow .itemDescription .menuDescription {
+  max-width: 100%;
+  max-height: 90px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  max-height: 90px;
-  max-width: 450px;
   margin: 10px 0;
 }
 .menu .container .menuItem .itemRow .itemDescription .menuPrice {
@@ -10610,6 +10623,7 @@ readers do not read off random characters that represent icons */
   border: none;
 }
 .menu .container .menuItem .selectionRow {
+  display: none;
   margin: 20px 0;
 }
 .menu .container .menuItem .selectionRow .choicesTitle {
@@ -10652,6 +10666,56 @@ readers do not read off random characters that represent icons */
   background-color: #f1b737;
   border: none;
   border-radius: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu .container .menuItem .itemRow .imageColumn {
+    width: 200px;
+  }
+  .menu .container .menuItem .itemRow .imageColumn img {
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 850px) {
+  .menu .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .menu .container .menuItem .itemRow .imageColumn {
+    width: 200px;
+  }
+  .menu .container .menuItem .itemRow .imageColumn img {
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 400px) {
+  .menu .container .menuItem .itemRow .imageColumn {
+    width: 150px;
+  }
+  .menu .container .menuItem .itemRow .imageColumn img {
+    object-fit: cover;
+  }
+  .menu .container .menuItem .itemRow .itemDescription {
+    font-size: 12px;
+  }
+  .menu .container .menuItem .itemRow .itemDescription .menuName {
+    font-size: 13px;
+  }
+  .menu .container .menuItem .itemRow .itemDescription .menuPrice p {
+    font-size: 12px;
+  }
+  .menu .container .menuItem .itemRow .itemDescription .menuPrice .addButton {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .menu .container .menuItem .selectionRow .choicesTitle {
+    font-size: 13px;
+  }
+  .menu .container .menuItem .selectionRow .choicesForm {
+    font-size: 12px;
+  }
+  .menu .container .menuItem .selectionRow button {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
