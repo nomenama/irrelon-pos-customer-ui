@@ -10661,6 +10661,7 @@ Add 1024, 850 and 400px breakpoints
   margin-top: 20px;
   font-size: 18px;
   font-weight: 600;
+  text-transform: uppercase;
   padding: 10px 50px;
   color: #ffffff;
   background-color: #f1b737;

@@ -12,7 +12,7 @@ const Menu = () => {
 			<Row className="container">
 
 				{menus.map(menu => (
-					<Column key={menu.name} className="menuItem">
+					<Column key={menu.id} className="menuItem">
 						<Row className="itemRow">
 
 							<Column className="imageColumn">
@@ -140,7 +140,7 @@ const Menu = () => {
 
 								</Column>
 
-								<button type="submit">ADD TO CART</button>
+								<button type="submit">add to cart</button>
 
 							</form>
 						</Column>

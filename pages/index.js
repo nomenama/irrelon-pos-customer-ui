@@ -11,7 +11,7 @@ export default function Home () {
 		<Screen>
 
 			<Head>
-				<title>Irrelon Pay</title>
+				<title>Irrelon Pay || Home</title>
 				<meta name="description" content="Irrelon Pay"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 				<link rel="icon" href="/favicon.ico"/>
