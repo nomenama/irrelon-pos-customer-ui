@@ -15,7 +15,7 @@ const Header = (props) => {
 			<Row className="container">
 				<Column className="logoColumn">
 					<Link href={href}>
-						<Image src={`/assets/logo-shop.png`} alt="logo" layout="fill"/>
+						<Image src={`/assets/logo-${brand}.png`} alt="logo" layout="fill"/>
 					</Link>
 				</Column>
 

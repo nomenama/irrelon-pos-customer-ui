@@ -10512,6 +10512,7 @@ readers do not read off random characters that represent icons */
 }
 .header .container .cart .far {
   padding: 15px;
+  color: #ffffff;
 }
 
 .footer {
