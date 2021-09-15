@@ -1,0 +1,145 @@
+@import "../styles/css/base/BaseTheme";
+
+.menu {
+  width: 100%;
+  margin: 50px 0;
+  background-color: #ffffff;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    .menuItem {
+      padding: 10px;
+      border: 1px solid #a1a1a1;
+      box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+
+      .itemRow {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 100% 1fr max-content;
+
+        .imageColumn {
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+          object-fit: fill;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .itemDescription {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+
+          .menuName {
+            font-size: 16px;
+            font-weight: 600;
+            padding-bottom: 10px;
+          }
+
+          .menuDescription {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            max-height: 90px;
+            max-width: 450px;
+            margin: 10px 0;
+          }
+
+          .menuPrice {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            p {
+              font-size: 16px;
+              font-weight: 600;
+              color: #969699;
+              margin: 0;
+              padding: 5px 0;
+            }
+
+            .addButton {
+              font-size: 16px;
+              font-weight: 600;
+              padding: 5px 20px;
+              background-color: $base-color;
+              color: #ffffff;
+              border-radius: 25px;
+              border: none;
+            }
+          }
+        }
+      }
+
+      .selectionRow {
+        //display: none;
+        margin: 20px 0;
+
+        .choicesTitle {
+          justify-content: center;
+          font-size: 18px;
+          font-weight: 500;
+          color: $base-color;
+        }
+
+        .choicesForm {
+          padding: 10px;
+          align-items: center;
+          text-align: center;
+
+          .selectionColumn {
+
+            p {
+              text-align: start;
+              font-weight: 600;
+            }
+
+            .itemSelection {
+              display: flex;
+              justify-content: space-between;
+
+              .itemName {
+
+                input {
+                  margin: 15px;
+                }
+
+                label {
+                  margin: 15px 0;
+                }
+              }
+
+              .itemPrice {
+                margin: 15px;
+                font-weight: 500;
+                color: #969699;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 80%;
+          margin-top: 20px;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 10px 50px;
+          color: #ffffff;
+          background-color: $base-color;
+          border: none;
+          border-radius: 25px;
+        }
+      }
+    }
+  }
+}
