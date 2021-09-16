@@ -10553,6 +10553,7 @@ Add 1024, 850 and 400px breakpoints
   width: 100%;
   margin: 50px 0;
   background-color: #ffffff;
+  position: relative;
 }
 .menu .container {
   display: grid;
@@ -10621,10 +10622,21 @@ Add 1024, 850 and 400px breakpoints
   color: #ffffff;
   border-radius: 25px;
   border: none;
+  cursor: pointer;
+}
+.menu .container .menuItem .displayNone {
+  display: none;
+}
+.menu .container .menuItem .displayBlock {
+  display: block;
 }
 .menu .container .menuItem .selectionRow {
-  display: none;
   margin: 20px 0;
+  position: absolute;
+  top: -70px;
+  right: 100px;
+  border: 3px solid #f1b737;
+  background-color: #eae7e7;
 }
 .menu .container .menuItem .selectionRow .choicesTitle {
   justify-content: center;
@@ -10670,17 +10682,22 @@ Add 1024, 850 and 400px breakpoints
 }
 
 @media screen and (max-width: 1024px) {
+  .menu .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .menu .container .menuItem .itemRow .imageColumn {
     width: 200px;
   }
   .menu .container .menuItem .itemRow .imageColumn img {
     object-fit: cover;
   }
+  .menu .container .menuItem .selectionRow {
+    position: static;
+    border: none;
+    background-color: #ffffff;
+  }
 }
 @media screen and (max-width: 850px) {
-  .menu .container {
-    grid-template-columns: repeat(1, 1fr);
-  }
   .menu .container .menuItem .itemRow .imageColumn {
     width: 200px;
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Column from "./Column";
 import Row from "./Row";
 import menus from "../menus.json";
@@ -7,13 +7,18 @@ import {twoDecimals} from "../utils/format";
 
 const Menu = () => {
 
+	const [activeId, setActiveId] = useState(null);
+
 	return (
 		<Row className="menu">
 			<Row className="container">
 
-				{menus.map(menu => (
+				{menus.map((menu, idx) => (
 					<Column key={menu.id} className="menuItem">
-						<Row className="itemRow">
+
+						<Row className="itemRow" id={idx} onClick={() => {
+							setActiveId(activeId === idx ? -1 : idx);
+						}}>
 
 							<Column className="imageColumn">
 								<img src={fromImageToUrl(menu.image)} alt=""/>
@@ -31,7 +36,9 @@ const Menu = () => {
 										£ {twoDecimals(menu.price)}
 									</p>
 
-									<button type="button" className="addButton">
+									<button id={idx} type="button" className="addButton" onClick={() => {
+										setActiveId(activeId === idx ? -1 : idx);
+									}}>
 										Add
 									</button>
 								</Row>
@@ -39,7 +46,7 @@ const Menu = () => {
 
 						</Row>
 
-						<Column className="selectionRow">
+						<Column id={idx} className={`selectionRow ${activeId === idx ? "displayBlock" : "displayNone"}`}>
 
 							<Row className="choicesTitle">
 								Please select from the choices below
@@ -53,7 +60,7 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="beef" name="beef"/>
+											<input type="radio" id="beef" name="meat" value="beef"/>
 											<label htmlFor="beef">Beef</label>
 										</span>
 										<span className="itemPrice">
@@ -63,7 +70,7 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="chicken" name="chicken"/>
+											<input type="radio" id="chicken" name="meat" value="chicken"/>
 											<label htmlFor="chicken">Chicken</label>
 										</span>
 										<span className="itemPrice">
@@ -73,7 +80,7 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="pork" name="pork"/>
+											<input type="radio" id="pork" name="meat" value="pork"/>
 											<label htmlFor="pork">Pork</label>
 										</span>
 										<span className="itemPrice">
@@ -83,7 +90,7 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="prawn" name="prawn"/>
+											<input type="radio" id="prawn" name="meat" value="prawn"/>
 											<label htmlFor="prawn">King Prawn</label>
 										</span>
 										<span className="itemPrice">

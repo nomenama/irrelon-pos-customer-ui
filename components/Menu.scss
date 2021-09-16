@@ -4,6 +4,7 @@
   width: 100%;
   margin: 50px 0;
   background-color: #ffffff;
+  position: relative;
 
   .container {
     display: grid;
@@ -77,14 +78,27 @@
               color: #ffffff;
               border-radius: 25px;
               border: none;
+              cursor: pointer;
             }
           }
         }
       }
 
-      .selectionRow {
+      .displayNone {
         display: none;
+      }
+
+      .displayBlock {
+        display: block;
+      }
+
+      .selectionRow {
         margin: 20px 0;
+        position: absolute;
+        top: -70px;
+        right: 100px;
+        border: 3px solid $base-color;
+        background-color: #eae7e7;
 
         .choicesTitle {
           justify-content: center;
@@ -150,6 +164,7 @@
   .menu {
 
     .container {
+      grid-template-columns: repeat(1, 1fr);
 
       .menuItem {
 
@@ -163,6 +178,11 @@
             }
           }
         }
+        .selectionRow {
+          position: static;
+          border: none;
+          background-color: #ffffff;
+        }
       }
     }
   }
@@ -172,7 +192,6 @@
   .menu {
 
     .container {
-      grid-template-columns: repeat(1, 1fr);
 
       .menuItem {
 

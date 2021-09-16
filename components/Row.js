@@ -8,6 +8,7 @@ const Row = (props) => {
 		style,
 		// eslint-disable-next-line react/prop-types
 		id,
+		onClick,
 		// eslint-disable-next-line react/prop-types
 		className = ""
 	} = props;
@@ -18,7 +19,7 @@ const Row = (props) => {
 	const finalClassName = classNames.join(" ");
 
 	return (
-		<div className={finalClassName} style={style} id={id}>
+		<div className={finalClassName} style={style} id={id} onClick={onClick}>
 			{children}
 		</div>
 	);
