@@ -10506,9 +10506,15 @@ readers do not read off random characters that represent icons */
   width: 30%;
   height: 100px;
 }
+.header .container .logoColumn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .header .container .cart {
   display: flex;
   justify-content: space-between;
+  font-size: 26px;
 }
 .header .container .cart .far {
   padding: 15px;
@@ -10518,6 +10524,16 @@ readers do not read off random characters that represent icons */
 /**
 Add 1024, 850 and 400px breakpoints
  */
+@media screen and (max-width: 1024px) {
+  .header .container .cart {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header .container .cart {
+    font-size: 22px;
+  }
+}
 .footer {
   background-color: #f1b737;
   color: #ffffff;

@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Column from "./Column";
 import Row from "./Row";
 import Link from "next/link";
@@ -15,13 +14,13 @@ const Header = (props) => {
 			<Row className="container">
 				<Column className="logoColumn">
 					<Link href={href}>
-						<Image src={`/assets/logo-${brand}.png`} alt="logo" layout="fill"/>
+						<img src={`/assets/logo-${brand}.png`} alt="logo"/>
 					</Link>
 				</Column>
 
 				<Column className="cart">
 					<Row>
-						<i className="far fa-cart-plus fa-2x"/>
+						<i className="far fa-cart-plus"/>
 						{/*<i className="far fa-search fa-2x"/>*/}
 					</Row>
 				</Column>
