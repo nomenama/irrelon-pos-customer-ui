@@ -39,6 +39,12 @@
           display: flex;
           justify-content: space-between;
 
+          .emptyCart {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 20px;
+          }
+
           .basketItems {
             display: grid;
             grid-template-columns: 3fr 80px 1fr 1fr;

@@ -16,7 +16,7 @@ const Basket = (props) => {
 
 					<Column className="cartItems">
 						<Column className="itemRow">
-							{cartItems.length === 0 && <div>Cart is empty</div>}
+							{cartItems.length === 0 && <div className="emptyCart">Cart is empty</div>}
 							{cartItems.map((item) => (
 								<Row key={item.id} className="basketItems">
 

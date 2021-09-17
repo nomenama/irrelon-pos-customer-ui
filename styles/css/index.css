@@ -10800,6 +10800,11 @@ readers do not read off random characters that represent icons */
   display: flex;
   justify-content: space-between;
 }
+.basket .container .wrapper .cartItems .itemRow .emptyCart {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px;
+}
 .basket .container .wrapper .cartItems .itemRow .basketItems {
   display: grid;
   grid-template-columns: 3fr 80px 1fr 1fr;
