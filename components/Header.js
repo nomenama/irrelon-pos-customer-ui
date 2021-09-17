@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Header = (props) => {
 
-	const {brand, href} = props;
+	const {brand, href, countCartItems} = props;
 
 	return (
 
@@ -21,7 +21,8 @@ const Header = (props) => {
 				<Column className="cart">
 					<Link href="/">
 						<a>
-							<i className="far fa-cart-plus"/>
+							<i className="far fa-cart-plus"/> {" "}
+							{countCartItems ? (<i className="fas fa-circle" />) : ("")}
 						</a>
 					</Link>
 				</Column>
