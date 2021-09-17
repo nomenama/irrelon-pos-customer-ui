@@ -1,23 +1,24 @@
 import React, {useState} from "react";
 import Column from "./Column";
 import Row from "./Row";
-import menus from "../menus.json";
 import {fromImageToUrl} from "../utils/urls";
 import {twoDecimals} from "../utils/format";
 
-const Menu = () => {
+const Menu = (props) => {
 
+	const {menus, onAdd} = props;
 	const [activeId, setActiveId] = useState(null);
+
 
 	return (
 		<Row className="menu">
 			<Row className="container">
 
-				{menus.map((menu, idx) => (
-					<Column key={menu.id} className="menuItem">
+				{menus.map((menu, index) => (
+					<Column key={menu.id} onAdd={onAdd} className="menuItem">
 
-						<Row className="itemRow" id={idx} onClick={() => {
-							setActiveId(activeId === idx ? -1 : idx);
+						<Row className="itemRow" id={index} onClick={() => {
+							setActiveId(activeId === index ? -1 : index);
 						}}>
 
 							<Column className="imageColumn">
@@ -36,8 +37,8 @@ const Menu = () => {
 										£ {twoDecimals(menu.price)}
 									</p>
 
-									<button id={idx} type="button" className="addButton" onClick={() => {
-										setActiveId(activeId === idx ? -1 : idx);
+									<button id={index} type="button" className="addButton" onClick={() => {
+										setActiveId(activeId === index ? -1 : index);
 									}}>
 										Add
 									</button>
@@ -46,7 +47,7 @@ const Menu = () => {
 
 						</Row>
 
-						<Column id={idx} className={`selectionRow ${activeId === idx ? "displayBlock" : "displayNone"}`}>
+						<Column id={index} className={`selectionRow ${activeId === index ? "displayBlock" : "displayNone"}`}>
 
 							<Row className="choicesTitle">
 								Please select from the choices below
@@ -105,7 +106,7 @@ const Menu = () => {
 								</Column>
 
 
-								{/*<Column className="selectionColumn">
+								{/*							<Column className="selectionColumn">
 
 									<p>Extras</p>
 
@@ -151,7 +152,7 @@ const Menu = () => {
 
 								</Column>*/}
 
-								<button type="submit">add to cart</button>
+								<button onClick={() => onAdd(menu)} type="button">add to cart</button>
 
 							</form>
 						</Column>

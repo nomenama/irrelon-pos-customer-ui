@@ -31,7 +31,7 @@
           img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: fill;
             object-position: center;
           }
         }
@@ -233,12 +233,14 @@
       .menuItem {
 
         .itemRow {
+          grid-template-columns: minmax(100px, 120px) 2fr;
+          grid-template-rows: minmax(100px, 120px) 1fr;
 
           .imageColumn {
-            width: 150px;
+            //width: 150px;
 
             img {
-              object-fit: cover;
+              //object-fit: cover;
             }
           }
 

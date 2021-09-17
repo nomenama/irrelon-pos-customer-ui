@@ -1,0 +1,103 @@
+@import "../styles/css/base/BaseTheme";
+
+.basket {
+  width: 100%;
+
+  .container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
+    .wrapper {
+      width: 100%;
+      display: flex;
+      justify-items: center;
+      align-items: flex-start;
+      border: 1px solid rgba(75, 74, 74, 0.5);
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+      -moz-box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+      -webkit-box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+      -o-box-shadow: 2px 2px 4px rgba(75, 74, 74, 0.5);
+      padding: 20px;
+
+      .cartDetail {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 20px 0;
+      }
+
+      .cartItems {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        justify-items: center;
+        border-radius: 5px;
+        box-shadow: -1px 1px 2px rgba(75, 74, 74, 0.5);
+
+        .itemRow {
+          display: flex;
+          justify-content: space-between;
+
+          .basketItems {
+            display: grid;
+            grid-template-columns: 3fr 80px 1fr 1fr;
+            padding: 40px 20px;
+            border-bottom: 1px dotted #969699;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            .itemNameSection {
+              font-weight: 500;
+              display: flex;
+              justify-content: flex-start;
+            }
+
+            .countButtonSection {
+              display: flex;
+              justify-content: space-between;
+            }
+
+            .divideSection {
+              display: flex;
+              justify-content: center;
+            }
+
+            .priceSection {
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+
+      .totalSection {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: -1px 1px 2px rgba(75, 74, 74, 0.5);
+        padding: 20px;
+        margin: 20px 0;
+
+        .total {
+          font-weight: 600;
+        }
+      }
+
+      .payButton {
+        width: 20%;
+        align-self: center;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 25px;
+        background-color: $base-color;
+        color: #ffffff;
+        padding: 10px;
+      }
+    }
+  }
+}
