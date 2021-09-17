@@ -19,10 +19,11 @@ const Header = (props) => {
 				</Column>
 
 				<Column className="cart">
-					<Row>
-						<i className="far fa-cart-plus"/>
-						{/*<i className="far fa-search fa-2x"/>*/}
-					</Row>
+					<Link href="/">
+						<a>
+							<i className="far fa-cart-plus"/>
+						</a>
+					</Link>
 				</Column>
 			</Row>
 		</header>

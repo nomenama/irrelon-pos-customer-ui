@@ -911,7 +911,7 @@ a.appLink:visited {
 }
 
 .container {
-  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -10521,9 +10521,6 @@ readers do not read off random characters that represent icons */
   color: #ffffff;
 }
 
-/**
-Add 1024, 850 and 400px breakpoints
- */
 @media screen and (max-width: 1024px) {
   .header .container .cart {
     font-size: 24px;
@@ -10569,7 +10566,6 @@ Add 1024, 850 and 400px breakpoints
   width: 100%;
   margin: 50px 0;
   background-color: #ffffff;
-  position: relative;
 }
 .menu .container {
   display: grid;
@@ -10582,10 +10578,11 @@ Add 1024, 850 and 400px breakpoints
   padding: 10px;
   border-radius: 5px;
   box-shadow: -2px 2px 4px rgba(75, 74, 74, 0.5);
+  position: relative;
 }
 .menu .container .menuItem .itemRow {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(130px, 180px) 2fr;
   grid-template-rows: 100% 1fr max-content;
 }
 .menu .container .menuItem .itemRow .imageColumn {
@@ -10596,7 +10593,7 @@ Add 1024, 850 and 400px breakpoints
 .menu .container .menuItem .itemRow .imageColumn img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
   object-position: center;
 }
 .menu .container .menuItem .itemRow .itemDescription {
@@ -10648,16 +10645,24 @@ Add 1024, 850 and 400px breakpoints
 }
 .menu .container .menuItem .selectionRow {
   margin: 20px 0;
-  position: absolute;
-  top: -70px;
-  right: 100px;
   border: 3px solid #f1b737;
   background-color: #eae7e7;
+  width: 100%;
+  z-index: 999;
+  position: absolute;
+  top: 140px;
+  left: 0;
 }
 .menu .container .menuItem .selectionRow .choicesTitle {
   justify-content: center;
   font-size: 18px;
   font-weight: 500;
+  color: #181818;
+  padding: 10px;
+}
+.menu .container .menuItem .selectionRow .choicesItemName {
+  padding: 10px;
+  font-weight: 600;
   color: #f1b737;
 }
 .menu .container .menuItem .selectionRow .choicesForm {
@@ -10668,6 +10673,7 @@ Add 1024, 850 and 400px breakpoints
 .menu .container .menuItem .selectionRow .choicesForm .selectionColumn p {
   text-align: start;
   font-weight: 600;
+  margin-top: 0;
 }
 .menu .container .menuItem .selectionRow .choicesForm .selectionColumn .itemSelection {
   display: flex;
@@ -10701,9 +10707,6 @@ Add 1024, 850 and 400px breakpoints
   .menu .container {
     grid-template-columns: repeat(1, 1fr);
   }
-  .menu .container .menuItem .itemRow .imageColumn {
-    width: 200px;
-  }
   .menu .container .menuItem .itemRow .imageColumn img {
     object-fit: cover;
   }
@@ -10712,13 +10715,8 @@ Add 1024, 850 and 400px breakpoints
     border: none;
     background-color: #ffffff;
   }
-}
-@media screen and (max-width: 850px) {
-  .menu .container .menuItem .itemRow .imageColumn {
-    width: 200px;
-  }
-  .menu .container .menuItem .itemRow .imageColumn img {
-    object-fit: cover;
+  .menu .container .menuItem .selectionRow .choicesItemName {
+    display: none;
   }
 }
 @media screen and (max-width: 400px) {

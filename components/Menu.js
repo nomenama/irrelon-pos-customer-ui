@@ -52,6 +52,10 @@ const Menu = () => {
 								Please select from the choices below
 							</Row>
 
+							<Row className="choicesItemName">
+								{menu.name}
+							</Row>
+
 							<form className="choicesForm">
 
 								<Column className="selectionColumn">
@@ -101,14 +105,14 @@ const Menu = () => {
 								</Column>
 
 
-								<Column className="selectionColumn">
+								{/*<Column className="selectionColumn">
 
 									<p>Extras</p>
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input id="egg" name="extras" value="egg" type="checkbox"/>
-											<label htmlFor="egg">Egg</label>
+											<input id={menu.additional.extra1} name="extras" value={menu.additional.extra1} type="checkbox"/>
+											<label htmlFor="egg">{menu.additional.extra1}</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -117,8 +121,8 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input id="vegetables" name="extras" value="vegetables" type="checkbox"/>
-											<label htmlFor="vegetables">Vegetables</label>
+											<input id={menu.additional.extra2} name="extras" value={menu.additional.extra2} type="checkbox"/>
+											<label htmlFor="vegetables">{menu.additional.extra2}</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -127,8 +131,8 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input id="chilly" name="extras" value="chilly" type="checkbox"/>
-											<label htmlFor="chilly">Chilly</label>
+											<input id={menu.additional.extra3} name="extras" value={menu.additional.extra3} type="checkbox"/>
+											<label htmlFor="chilly">{menu.additional.extra3}</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -137,15 +141,15 @@ const Menu = () => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input id="curry" name="extras" value="curry" type="checkbox"/>
-											<label htmlFor="curry">Curry</label>
+											<input id={menu.additional.extra4} name="extras" value={menu.additional.extra4} type="checkbox"/>
+											<label htmlFor="curry">{menu.additional.extra4}</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
 										</span>
 									</Row>
 
-								</Column>
+								</Column>*/}
 
 								<button type="submit">add to cart</button>
 
