@@ -9,7 +9,8 @@
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	},
 	{
@@ -22,7 +23,8 @@
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	},
 	{
@@ -35,7 +37,8 @@
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	},
 	{
@@ -48,7 +51,8 @@
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	},
 	{
@@ -56,12 +60,13 @@
 		"category": "main",
 		"name": "Fried Chicken",
 		"description": "Crispy Fried Chicken",
-		"price": 6.5,
+		"price": 4.5,
 		"additional": {
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	},
 	{
@@ -69,12 +74,13 @@
 		"category": "main",
 		"name": "Red Curry",
 		"description": "Red Curry",
-		"price": 6.5,
+		"price": 4.5,
 		"additional": {
 			"extra1": "Thai Tea - (Ice Optional)",
 			"extra2": "Mineral Water",
 			"extra3": "Coke",
-			"extra4": "Sprite"
+			"extra4": "Sprite",
+			"extra5": "Plain Jasmine Rice"
 		}
 	}
 ]

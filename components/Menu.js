@@ -61,12 +61,12 @@ const Menu = (props) => {
 
 								<Column className="selectionColumn">
 
-									<p>Meat</p>
+									<p>Extra</p>
 
-									<Row className="itemSelection">
+									{/*<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="beef" name="meat" value="beef"/>
-											<label htmlFor="beef">Beef</label>
+											<input type="radio" id="tea" name="extra" value="tea"/>
+											<label htmlFor="tea">Thai Tea (Ice-Optional)</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -75,8 +75,8 @@ const Menu = (props) => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="chicken" name="meat" value="chicken"/>
-											<label htmlFor="chicken">Chicken</label>
+											<input type="radio" id="plainRice" name="extra" value="plain Rice"/>
+											<label htmlFor="plainRice">Plain Jasmine Rice</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -85,8 +85,8 @@ const Menu = (props) => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="pork" name="meat" value="pork"/>
-											<label htmlFor="pork">Pork</label>
+											<input type="radio" id="water" name="extra" value="Mineral water"/>
+											<label htmlFor="water">Mineral Water</label>
 										</span>
 										<span className="itemPrice">
 												+ £{twoDecimals(1.5)}
@@ -95,8 +95,65 @@ const Menu = (props) => {
 
 									<Row className="itemSelection">
 										<span className="itemName">
-											<input type="radio" id="prawn" name="meat" value="prawn"/>
-											<label htmlFor="prawn">King Prawn</label>
+											<input type="radio" id="coke" name="extra" value="coke"/>
+											<label htmlFor="coke">Coke</label>
+										</span>
+										<span className="itemPrice">
+											+ £{twoDecimals(1.5)}
+										</span>
+									</Row>
+
+									<Row className="itemSelection">
+										<span className="itemName">
+											<input type="radio" id="sprite" name="extra" value="sprite"/>
+											<label htmlFor="sprite">Sprite</label>
+										</span>
+										<span className="itemPrice">
+											+ £{twoDecimals(1.5)}
+										</span>
+									</Row>*/}
+
+								</Column>
+
+
+															<Column className="selectionColumn">
+
+									<p>Extras</p>
+
+									<Row className="itemSelection">
+										<span className="itemName">
+											<input id={menu.additional.extra1} name="extras" value={menu.additional.extra1} type="radio"/>
+											<label htmlFor={menu.additional.extra1}>{menu.additional.extra1}</label>
+										</span>
+										<span className="itemPrice">
+											+ £{twoDecimals(1.5)}
+										</span>
+									</Row>
+
+									<Row className="itemSelection">
+										<span className="itemName">
+											<input id={menu.additional.extra2} name="extras" value={menu.additional.extra2} type="radio"/>
+											<label htmlFor={menu.additional.extra2}>{menu.additional.extra2}</label>
+										</span>
+										<span className="itemPrice">
+											+ £{twoDecimals(1.5)}
+										</span>
+									</Row>
+
+									<Row className="itemSelection">
+										<span className="itemName">
+											<input id={menu.additional.extra3} name="extras" value={menu.additional.extra3} type="radio"/>
+											<label htmlFor={menu.additional.extra3}>{menu.additional.extra3}</label>
+										</span>
+										<span className="itemPrice">
+											+ £{twoDecimals(1.5)}
+										</span>
+									</Row>
+
+									<Row className="itemSelection">
+										<span className="itemName">
+											<input id={menu.additional.extra4} name="extras" value={menu.additional.extra4} type="radio"/>
+											<label htmlFor={menu.additional.extra4}>{menu.additional.extra4}</label>
 										</span>
 										<span className="itemPrice">
 											+ £{twoDecimals(1.5)}
@@ -105,54 +162,7 @@ const Menu = (props) => {
 
 								</Column>
 
-
-								{/*							<Column className="selectionColumn">
-
-									<p>Extras</p>
-
-									<Row className="itemSelection">
-										<span className="itemName">
-											<input id={menu.additional.extra1} name="extras" value={menu.additional.extra1} type="checkbox"/>
-											<label htmlFor="egg">{menu.additional.extra1}</label>
-										</span>
-										<span className="itemPrice">
-											+ £{twoDecimals(1.5)}
-										</span>
-									</Row>
-
-									<Row className="itemSelection">
-										<span className="itemName">
-											<input id={menu.additional.extra2} name="extras" value={menu.additional.extra2} type="checkbox"/>
-											<label htmlFor="vegetables">{menu.additional.extra2}</label>
-										</span>
-										<span className="itemPrice">
-											+ £{twoDecimals(1.5)}
-										</span>
-									</Row>
-
-									<Row className="itemSelection">
-										<span className="itemName">
-											<input id={menu.additional.extra3} name="extras" value={menu.additional.extra3} type="checkbox"/>
-											<label htmlFor="chilly">{menu.additional.extra3}</label>
-										</span>
-										<span className="itemPrice">
-											+ £{twoDecimals(1.5)}
-										</span>
-									</Row>
-
-									<Row className="itemSelection">
-										<span className="itemName">
-											<input id={menu.additional.extra4} name="extras" value={menu.additional.extra4} type="checkbox"/>
-											<label htmlFor="curry">{menu.additional.extra4}</label>
-										</span>
-										<span className="itemPrice">
-											+ £{twoDecimals(1.5)}
-										</span>
-									</Row>
-
-								</Column>*/}
-
-								<button onClick={() => onAdd(menu)} type="button">add to cart</button>
+								<button onClick={() => (onAdd(menu), setActiveId(activeId === index ? -1 : index))} type="button">add to cart</button>
 
 							</form>
 						</Column>

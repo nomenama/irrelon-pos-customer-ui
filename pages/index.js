@@ -5,32 +5,34 @@ import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Basket from "../components/Basket";
-import menus from "../menus.json";
+import menus from "../sue.json";
 
-export default function Home () {
+export default function Home (props) {
 
 	const [cartItems, setCartItems] = useState([]);
 	const {menu} = menus;
 
-	const onAdd = (menu) => {
-		const exist = cartItems.find(item => item.id === menu.id);
 
-		if (exist) {
-			setCartItems(cartItems.map(item => item.id === menu.id ? {...exist, qty: exist.qty + 1} : item));
-		} else {
-			setCartItems([...cartItems, {...menu, qty: 1}]);
-		}
-	};
+		const onAdd = (menu) => {
+			const exist = cartItems.find(item => item.id === menu.id);
 
-	const onRemove = (menu) => {
-		const exist = cartItems.find((item) => item.id === menu.id);
+			if (exist) {
+				setCartItems(cartItems.map(item => item.id === menu.id ? {...exist, qty: exist.qty + 1} : item));
+			} else {
+				setCartItems([...cartItems, {...menu, qty: 1}]);
+			}
+		};
 
-		if (exist.qty === 1) {
-			setCartItems(cartItems.filter((item) => item.id !== menu.id));
-		} else {
-			setCartItems(cartItems.map((item) => item.id === menu.id ? {...exist, qty: exist.qty - 1} : item))
-		}
-	}
+		const onRemove = (menu) => {
+			const exist = cartItems.find((item) => item.id === menu.id);
+
+			if (exist.qty === 1) {
+				setCartItems(cartItems.filter((item) => item.id !== menu.id));
+			} else {
+				setCartItems(cartItems.map((item) => item.id === menu.id ? {...exist, qty: exist.qty - 1} : item));
+			}
+
+		};
 
 	return (
 
@@ -47,7 +49,7 @@ export default function Home () {
 
 			<Menu onAdd={onAdd} onRemove={onRemove} menus={menus}/>
 
-			<Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
+			<Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
 
 			<Footer/>
 

@@ -10764,6 +10764,7 @@ readers do not read off random characters that represent icons */
 }
 .basket {
   width: 100%;
+  margin: 50px 0;
 }
 .basket .container {
   display: flex;
@@ -10822,6 +10823,7 @@ readers do not read off random characters that represent icons */
 .basket .container .wrapper .cartItems .itemRow .basketItems .countButtonSection {
   display: flex;
   justify-content: space-between;
+  border: none;
 }
 .basket .container .wrapper .cartItems .itemRow .basketItems .divideSection {
   display: flex;
