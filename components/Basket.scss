@@ -2,7 +2,7 @@
 
 .basket {
   width: 100%;
-  margin: 50px 0;
+  margin: 50px 10px;
 
   .container {
     display: flex;
@@ -48,7 +48,8 @@
 
           .basketItems {
             display: grid;
-            grid-template-columns: 3fr 80px 1fr 1fr;
+            grid-template-columns: 3fr 80px 2fr;
+            grid-template-rows: repeat(5, 1fr);
             padding: 40px 20px;
             border-bottom: 1px dotted #969699;
 
@@ -57,10 +58,18 @@
             }
 
             .itemNameSection {
-              font-weight: 500;
-              display: flex;
-              justify-content: flex-start;
+              display: block;
+              font-weight: 600;
+              grid-row: 1 / span 5;
+
+              .additionalItemsName {
+                font-size: 12px;
+                font-weight: 400;
+                padding: 10px;
+              }
+
             }
+
 
             .countButtonSection {
               display: flex;
@@ -68,13 +77,7 @@
               border: none;
             }
 
-            .divideSection {
-              display: flex;
-              justify-content: center;
-            }
-
             .priceSection {
-              display: flex;
               justify-content: flex-end;
             }
           }
@@ -100,6 +103,7 @@
         align-self: center;
         font-size: 16px;
         font-weight: 600;
+        text-transform: uppercase;
         border: none;
         border-radius: 25px;
         background-color: $base-color;

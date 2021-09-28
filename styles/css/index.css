@@ -10665,7 +10665,7 @@ readers do not read off random characters that represent icons */
   width: 100%;
   z-index: 999;
   position: absolute;
-  top: 140px;
+  top: 120px;
   left: 0;
 }
 .menu .container .menuItem .selectionRow .choicesTitle {
@@ -10764,7 +10764,7 @@ readers do not read off random characters that represent icons */
 }
 .basket {
   width: 100%;
-  margin: 50px 0;
+  margin: 50px 10px;
 }
 .basket .container {
   display: flex;
@@ -10808,7 +10808,8 @@ readers do not read off random characters that represent icons */
 }
 .basket .container .wrapper .cartItems .itemRow .basketItems {
   display: grid;
-  grid-template-columns: 3fr 80px 1fr 1fr;
+  grid-template-columns: 3fr 80px 2fr;
+  grid-template-rows: repeat(5, 1fr);
   padding: 40px 20px;
   border-bottom: 1px dotted #969699;
 }
@@ -10816,21 +10817,21 @@ readers do not read off random characters that represent icons */
   border-bottom: none;
 }
 .basket .container .wrapper .cartItems .itemRow .basketItems .itemNameSection {
-  font-weight: 500;
-  display: flex;
-  justify-content: flex-start;
+  display: block;
+  font-weight: 600;
+  grid-row: 1/span 5;
+}
+.basket .container .wrapper .cartItems .itemRow .basketItems .itemNameSection .additionalItemsName {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px;
 }
 .basket .container .wrapper .cartItems .itemRow .basketItems .countButtonSection {
   display: flex;
   justify-content: space-between;
   border: none;
 }
-.basket .container .wrapper .cartItems .itemRow .basketItems .divideSection {
-  display: flex;
-  justify-content: center;
-}
 .basket .container .wrapper .cartItems .itemRow .basketItems .priceSection {
-  display: flex;
   justify-content: flex-end;
 }
 .basket .container .wrapper .totalSection {
@@ -10850,6 +10851,7 @@ readers do not read off random characters that represent icons */
   align-self: center;
   font-size: 16px;
   font-weight: 600;
+  text-transform: uppercase;
   border: none;
   border-radius: 25px;
   background-color: #f1b737;

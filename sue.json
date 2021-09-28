@@ -1,86 +1,74 @@
 [
 	{
-		"id": 1,
+		"_id": 1,
 		"category": "main",
 		"name": "Chicken Noodle",
 		"description": "Special Vietnamese Chicken Noodle",
 		"price": 6.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  2.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  0.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  0.5
+		}]
 	},
 	{
-		"id": 2,
+		"_id": 2,
 		"category": "main",
 		"name": "Beef Noodle",
 		"description": "Special Vietnamese Beef Noodle",
 		"price": 6.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"image": ""
 	},
 	{
-		"id": 3,
+		"_id": 3,
 		"category": "main",
 		"name": "Chicken Rice",
 		"description": "Special Vietnamese Chicken Rice",
 		"price": 6.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"image": ""
 	},
 	{
-		"id": 4,
+		"_id": 4,
 		"category": "appetiser",
 		"name": "Spring Rolls",
 		"description": "Special Vietnamese Spring Roll",
 		"price": 4.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"image": ""
 	},
 	{
-		"id": 5,
+		"_id": 5,
 		"category": "main",
 		"name": "Fried Chicken",
 		"description": "Crispy Fried Chicken",
 		"price": 4.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"image": ""
 	},
 	{
-		"id": 6,
+		"_id": 6,
 		"category": "main",
 		"name": "Red Curry",
 		"description": "Red Curry",
 		"price": 4.5,
-		"additional": {
-			"extra1": "Thai Tea - (Ice Optional)",
-			"extra2": "Mineral Water",
-			"extra3": "Coke",
-			"extra4": "Sprite",
-			"extra5": "Plain Jasmine Rice"
-		}
+		"image": ""
 	}
 ]

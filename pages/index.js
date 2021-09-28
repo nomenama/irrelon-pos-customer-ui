@@ -5,54 +5,52 @@ import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Basket from "../components/Basket";
-import menus from "../sue.json";
+import menuItems from "../sue.json";
 
-export default function Home (props) {
-
+export default function Home () {
 	const [cartItems, setCartItems] = useState([]);
-	const {menu} = menus;
+	const [selectedItemId, setSelectedItemId] = useState("");
 
+	const addItemToBasket = (menuItemId, optionIds) => {
+		const hash = JSON.stringify(menuItemId) + JSON.stringify(optionIds.map((optionId) => optionId));
+		const exist = cartItems.find((item) => item.hash === hash);
 
-		const onAdd = (menu) => {
-			const exist = cartItems.find(item => item.id === menu.id);
+		if (exist) {
+			setCartItems(cartItems.map((item) => item.hash === hash ? {...exist, optionIds, qty: exist.qty + 1} : item));
+		} else {
+			setCartItems([...cartItems, {menuItemId, optionIds, qty: 1, hash}]);
+		}
+	};
 
-			if (exist) {
-				setCartItems(cartItems.map(item => item.id === menu.id ? {...exist, qty: exist.qty + 1} : item));
-			} else {
-				setCartItems([...cartItems, {...menu, qty: 1}]);
-			}
-		};
+	const onIncreaseQuantity = (hash) => {
+		const cartItem = cartItems.find(item => item.hash === hash);
+		setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty + 1} : item));
+	};
 
-		const onRemove = (menu) => {
-			const exist = cartItems.find((item) => item.id === menu.id);
+	const onDecreaseQuantity = (hash) => {
+		const cartItem = cartItems.find(item => item.hash === hash);
 
-			if (exist.qty === 1) {
-				setCartItems(cartItems.filter((item) => item.id !== menu.id));
-			} else {
-				setCartItems(cartItems.map((item) => item.id === menu.id ? {...exist, qty: exist.qty - 1} : item));
-			}
-
-		};
+		if (cartItem.qty === 1) {
+			setCartItems(cartItems.filter((item) => item.hash !== hash));
+		} else {
+			setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty - 1} : item));
+		}
+	};
 
 	return (
-
 		<Screen>
-
 			<Head>
-				<title>Irrelon Pay || Home</title>
+				<title>Irrelon Pay</title>
 				<meta name="description" content="Irrelon Pay"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
 			<Header brand="shop" href="/" countCartItems={cartItems.length}/>
-
-			<Menu onAdd={onAdd} onRemove={onRemove} menus={menus}/>
-
-			<Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
+			<Menu addItemToBasket={addItemToBasket} menuItems={menuItems} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId} />
+			<Basket addItemToBasket={addItemToBasket} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems} menuItems={menuItems} />
 
 			<Footer/>
-
 		</Screen>
 	);
 }

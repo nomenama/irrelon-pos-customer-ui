@@ -1,15 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Row = (props) => {
 	const {
-		// eslint-disable-next-line react/prop-types
 		children,
-		// eslint-disable-next-line react/prop-types
 		style,
-		// eslint-disable-next-line react/prop-types
 		id,
 		onClick,
-		// eslint-disable-next-line react/prop-types
 		className = ""
 	} = props;
 
@@ -26,3 +23,15 @@ const Row = (props) => {
 };
 
 export default Row;
+
+Row.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  id: PropTypes.string,
+  onClick: PropTypes.func,
+  style: PropTypes.object
+}
+
+Row.defaultProps = {
+  className: ""
+}
