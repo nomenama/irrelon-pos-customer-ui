@@ -20,11 +20,14 @@ export default function Home () {
 		} else {
 			setCartItems([...cartItems, {menuItemId, optionIds, qty: 1, hash}]);
 		}
+
+		setSelectedItemId("");
 	};
 
 	const onIncreaseQuantity = (hash) => {
 		const cartItem = cartItems.find(item => item.hash === hash);
 		setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty + 1} : item));
+		setSelectedItemId("");
 	};
 
 	const onDecreaseQuantity = (hash) => {
@@ -35,6 +38,7 @@ export default function Home () {
 		} else {
 			setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty - 1} : item));
 		}
+		setSelectedItemId("");
 	};
 
 	return (

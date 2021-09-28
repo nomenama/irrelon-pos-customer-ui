@@ -18,9 +18,7 @@ const MenuItem = ({data, addItemToBasket, selectedItemId, setSelectedItemId}) =>
 	};
 
     return (
-		<Column key={data._id} className="menuItem" onClick={() => {
-			setSelectedItemId(data._id);
-		}}>
+		<Column key={data._id} className="menuItem">
 			<Row className="itemRow">
 				<Column className="imageColumn">
 					<img src={fromImageToUrl(data.image)} alt=""/>
@@ -36,7 +34,13 @@ const MenuItem = ({data, addItemToBasket, selectedItemId, setSelectedItemId}) =>
 					<Row className="menuPrice">
 						<p>£{twoDecimals(data.price)}</p>
 
-						<button type="button" className="addButton">
+						<button type="button" className="addButton" onClick={() => {
+							if (data.options && data.options.length) {
+								return setSelectedItemId(data._id);
+							}
+
+							addItemToBasket(data._id, selectedOptions)
+						}}>
 							Add
 						</button>
 					</Row>
