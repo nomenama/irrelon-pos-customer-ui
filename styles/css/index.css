@@ -10851,9 +10851,11 @@ readers do not read off random characters that represent icons */
 .basket .container .wrapper .payButton {
   width: 20%;
   align-self: center;
+  text-align: center;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
   border: none;
   border-radius: 25px;
   background-color: #f1b737;

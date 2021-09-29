@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "./Row";
 import Column from "./Column";
+import Link from "next/link";
 import {twoDecimals} from "../utils/format";
 
 const Basket = (props) => {
@@ -73,7 +74,10 @@ const Basket = (props) => {
 						</Column>
 
 					</Row>
-					<button className="payButton">Pay</button>
+					<Link href="/checkout">
+						<a className="payButton" >Pay</a>
+					</Link>
+
 				</Column>
 			</Column>
 		</Column>
