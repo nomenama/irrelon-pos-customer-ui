@@ -5,12 +5,13 @@
 		"name": "Chicken Noodle",
 		"description": "Special Vietnamese Chicken Noodle",
 		"price": 6.5,
+		"image": "",
 		"options": [{
 			"_id": 11,
 			"category": "drink",
 			"name": "Thai Tea - (Ice Optional)",
 			"description": "Thai Tea from Thailand",
-			"price":  2.5
+			"price":  1.5
 		}, {
 			"_id": 12,
 			"category": "drink",
@@ -22,13 +23,13 @@
 			"category": "drink",
 			"name": "Coke",
 			"description": "330ml can",
-			"price":  0.5
+			"price":  1.5
 		}, {
 			"_id": 14,
 			"category": "drink",
 			"name": "Sprite",
 			"description": "330ml can",
-			"price":  0.5
+			"price":  1.5
 		}]
 	},
 	{
@@ -37,7 +38,32 @@
 		"name": "Beef Noodle",
 		"description": "Special Vietnamese Beef Noodle",
 		"price": 6.5,
-		"image": ""
+		"image": "",
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  1.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  1.5
+		}]
 	},
 	{
 		"_id": 3,
@@ -45,7 +71,32 @@
 		"name": "Chicken Rice",
 		"description": "Special Vietnamese Chicken Rice",
 		"price": 6.5,
-		"image": ""
+		"image": "",
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  1.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  1.5
+		}]
 	},
 	{
 		"_id": 4,
@@ -53,7 +104,32 @@
 		"name": "Spring Rolls",
 		"description": "Special Vietnamese Spring Roll",
 		"price": 4.5,
-		"image": ""
+		"image": "",
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  1.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  1.5
+		}]
 	},
 	{
 		"_id": 5,
@@ -61,7 +137,38 @@
 		"name": "Fried Chicken",
 		"description": "Crispy Fried Chicken",
 		"price": 4.5,
-		"image": ""
+		"image": "",
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  1.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 15,
+			"category": "side",
+			"name": "Plain Jasmine Rice",
+			"description": "Plain Jasmine Rice",
+			"price":  1.5
+		}]
 	},
 	{
 		"_id": 6,
@@ -69,6 +176,37 @@
 		"name": "Red Curry",
 		"description": "Red Curry",
 		"price": 4.5,
-		"image": ""
+		"image": "",
+		"options": [{
+			"_id": 11,
+			"category": "drink",
+			"name": "Thai Tea - (Ice Optional)",
+			"description": "Thai Tea from Thailand",
+			"price":  1.5
+		}, {
+			"_id": 12,
+			"category": "drink",
+			"name": "Mineral Water",
+			"description": "Mineral Water",
+			"price":  1.5
+		}, {
+			"_id": 13,
+			"category": "drink",
+			"name": "Coke",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 14,
+			"category": "drink",
+			"name": "Sprite",
+			"description": "330ml can",
+			"price":  1.5
+		}, {
+			"_id": 15,
+			"category": "side",
+			"name": "Plain Jasmine Rice",
+			"description": "Plain Jasmine Rice",
+			"price":  1.5
+		}]
 	}
 ]
