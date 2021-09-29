@@ -19,7 +19,7 @@ const Header = (props) => {
 				</Column>
 
 				<Column className="cart">
-					<Link href="/">
+					<Link href="/cart">
 						<a>
 							<i className="far fa-cart-plus"/> {" "}
 							{countCartItems ? (<i className="fas fa-circle" />) : ("")}

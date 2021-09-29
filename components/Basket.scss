@@ -2,6 +2,8 @@
 
 .basket {
   margin: 50px 10px;
+  //max-height: 400px;
+  //overflow: scroll;
 
   .container {
     display: flex;
@@ -48,7 +50,6 @@
           .basketItems {
             display: grid;
             grid-template-columns: 3fr 80px 2fr;
-            grid-template-rows: repeat(5, 1fr);
             padding: 40px 20px;
             border-bottom: 1px dotted #969699;
 
