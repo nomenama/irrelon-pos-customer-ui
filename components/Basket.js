@@ -41,8 +41,10 @@ const Basket = (props) => {
 										<Row className="itemNameSection">
 											{name}
 
-											{options.map((option) => <Column key={option._id} className="additionalItemsName">
-												{option.name}
+											{options.map((option) => <Column key={option._id} className="selectedOptionsSection">
+												<div className="selectedOptions">
+													<span style={{paddingRight: "10px"}}>{option.name}</span> + {option.price}
+												</div>
 											</Column>)}
 										</Row>
 
@@ -69,29 +71,8 @@ const Basket = (props) => {
 						<Column className="total">
 							£{basketTotalPrice.toFixed(2)}
 						</Column>
+
 					</Row>
-
-					{/*
-						<Row className="additionalInfo">
-							Additional Info
-							<textarea name="allergies" id="additionalInfo" cols="30" rows="10" placeholder="Allergies etc"></textarea>
-						</Row>
-
-						<Column className="address">
-							Line 1
-							<input type="text"/>
-							Line 2
-							<input type="text"/>
-							Line 3
-							<input type="text"/>
-							Poscode
-							<input type="text"/>
-						</Column>
-
-						<Row className="payment">
-							Payment
-						</Row>
-					*/}
 					<button className="payButton">Pay</button>
 				</Column>
 			</Column>

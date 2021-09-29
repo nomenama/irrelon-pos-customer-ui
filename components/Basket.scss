@@ -1,7 +1,6 @@
 @import "../styles/css/base/BaseTheme";
 
 .basket {
-  width: 100%;
   margin: 50px 10px;
 
   .container {
@@ -62,8 +61,11 @@
               font-weight: 600;
               grid-row: 1 / span 5;
 
-              .additionalItemsName {
-                font-size: 12px;
+              .selectedOptionsSection {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: 14px;
                 font-weight: 400;
                 padding: 10px;
               }

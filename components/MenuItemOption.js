@@ -2,7 +2,9 @@ import {twoDecimals} from "../utils/format";
 import Row from "./Row";
 import React from "react";
 
-const MenuItemOption = ({data, checked, handleOptionCheckChange}) => {
+const MenuItemOption = (props) => {
+
+	const {data, checked, handleOptionCheckChange} = props;
 	return (
 		<Row className="itemSelection">
 			<span className="itemName">

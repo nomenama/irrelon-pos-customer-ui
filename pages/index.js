@@ -44,7 +44,7 @@ export default function Home () {
 	return (
 		<Screen>
 			<Head>
-				<title>Irrelon Pay</title>
+				<title>Irrelon Pay || Home</title>
 				<meta name="description" content="Irrelon Pay"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 				<link rel="icon" href="/favicon.ico"/>
@@ -53,7 +53,6 @@ export default function Home () {
 			<Header brand="shop" href="/" countCartItems={cartItems.length}/>
 			<Menu addItemToBasket={addItemToBasket} menuItems={menuItems} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId} />
 			<Basket addItemToBasket={addItemToBasket} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems} menuItems={menuItems} />
-
 			<Footer/>
 		</Screen>
 	);

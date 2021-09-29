@@ -5,7 +5,9 @@ import {fromImageToUrl} from "../utils/urls";
 import {twoDecimals} from "../utils/format";
 import MenuItemOption from "./MenuItemOption";
 
-const MenuItem = ({data, addItemToBasket, selectedItemId, setSelectedItemId}) => {
+const MenuItem = (props) => {
+
+	const {data, addItemToBasket, selectedItemId, setSelectedItemId} = props;
 	const [selectedOptions, setSelectedOptions] = useState([]);
 
 	const handleOptionCheckChange = (optionId) => (evt) => {

@@ -10763,7 +10763,6 @@ readers do not read off random characters that represent icons */
   }
 }
 .basket {
-  width: 100%;
   margin: 50px 10px;
 }
 .basket .container {
@@ -10821,8 +10820,11 @@ readers do not read off random characters that represent icons */
   font-weight: 600;
   grid-row: 1/span 5;
 }
-.basket .container .wrapper .cartItems .itemRow .basketItems .itemNameSection .additionalItemsName {
-  font-size: 12px;
+.basket .container .wrapper .cartItems .itemRow .basketItems .itemNameSection .selectedOptionsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
   font-weight: 400;
   padding: 10px;
 }
