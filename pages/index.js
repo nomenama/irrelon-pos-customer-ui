@@ -5,7 +5,7 @@ import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Basket from "../components/Basket";
-import menuItems from "../sue.json";
+import menuItems from "../menus.json";
 
 export default function Home () {
 	const [cartItems, setCartItems] = useState([]);
@@ -50,7 +50,7 @@ export default function Home () {
 
 			<Header brand="shop" href="/" countCartItems={cartItems.length}/>
 			<Menu addItemToBasket={addItemToBasket} menuItems={menuItems} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId}/>
-			<Basket addItemToBasket={addItemToBasket} menuItems={menuItems} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems}/>
+			{/*<Basket addItemToBasket={addItemToBasket} menuItems={menuItems} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems}/>*/}
 			<Footer/>
 
 		</Screen>

@@ -35,7 +35,37 @@ const Basket = (props) => {
 					<Row className="cartDetail">Cart Detail</Row>
 					<Column className="cartItems">
 						<Column className="itemRow">
-							{cartItems.length === 0 && <div className="emptyCart">Cart is empty</div>}
+
+							{cartItems.length === 0 ? (<h1>Your Cart is Empty</h1>) : (
+								<>
+									{cartItemObjects.map(({name, price, hash, qty, options}) => {
+										return (
+											<Row key={hash} className="basketItems">
+												<Row className="itemNameSection">
+													{name}
+
+													{options.map((option) => <Column key={option._id} className="selectedOptionsSection">
+														<div className="selectedOptions">
+															<span style={{paddingRight: "10px"}}>{option.name}</span> + {option.price}
+														</div>
+													</Column>)}
+												</Row>
+
+												<Row className="countButtonSection">
+													<button onClick={() => onDecreaseQuantity(hash)}><i className="fal fa-minus"/></button>
+													{qty}
+													<button onClick={() => onIncreaseQuantity(hash)}><i className="fal fa-plus"/></button>
+												</Row>
+
+												<Row className="priceSection">
+													£{twoDecimals(price * qty)}
+												</Row>
+											</Row>
+										)
+									})}
+								</>
+							)}
+							{/*							{cartItems.length === 0 && <div className="emptyCart">Cart is empty</div>}
 							{cartItemObjects.map(({name, price, hash, qty, options}) => {
 								return (
 									<Row key={hash} className="basketItems">
@@ -60,7 +90,7 @@ const Basket = (props) => {
 										</Row>
 									</Row>
 								);
-							})}
+							})}*/}
 						</Column>
 					</Column>
 
@@ -75,7 +105,7 @@ const Basket = (props) => {
 
 					</Row>
 					<Link href="/checkout">
-						<a className="payButton" >Pay</a>
+						<a className="payButton">Pay</a>
 					</Link>
 
 				</Column>

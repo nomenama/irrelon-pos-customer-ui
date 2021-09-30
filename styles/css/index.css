@@ -10580,7 +10580,7 @@ readers do not read off random characters that represent icons */
 }
 .menu {
   width: 100%;
-  margin: 50px 0;
+  margin: auto 0;
   background-color: #ffffff;
 }
 .menu .container {
@@ -10589,6 +10589,8 @@ readers do not read off random characters that represent icons */
   grid-template-rows: repeat(auto-fill, auto);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .menu .container .menuItem {
   padding: 10px;
@@ -10764,7 +10766,7 @@ readers do not read off random characters that represent icons */
   }
 }
 .basket {
-  margin: 50px 10px;
+  margin: auto 0;
 }
 .basket .container {
   display: flex;
