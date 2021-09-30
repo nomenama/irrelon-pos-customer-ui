@@ -23,13 +23,11 @@ export default function Home () {
 
 		setSelectedItemId("");
 	};
-
 	const onIncreaseQuantity = (hash) => {
 		const cartItem = cartItems.find(item => item.hash === hash);
 		setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty + 1} : item));
 		setSelectedItemId("");
 	};
-
 	const onDecreaseQuantity = (hash) => {
 		const cartItem = cartItems.find(item => item.hash === hash);
 
