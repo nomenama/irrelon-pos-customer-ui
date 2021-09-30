@@ -5,21 +5,29 @@ import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Basket from "../components/Basket";
-import menuItems from "../menus.json";
+import {GET, POST, PATCH} from "../services/api";
 
-export default function Home () {
+const Home = ({menu, menuItems}) => {
 	const [cartItems, setCartItems] = useState([]);
 	const [selectedItemId, setSelectedItemId] = useState("");
 
-	const addItemToBasket = (menuItemId, optionIds) => {
+	const addItemToBasket = async (menuItemId, optionIds) => {
 		const hash = JSON.stringify(menuItemId) + JSON.stringify(optionIds.map((optionId) => optionId));
 		const exist = cartItems.find((item) => item.hash === hash);
 
+		let newCartItems;
+
 		if (exist) {
-			setCartItems(cartItems.map((item) => item.hash === hash ? {...exist, optionIds, qty: exist.qty + 1} : item));
+			newCartItems = cartItems.map((item) => item.hash === hash ? {...exist, optionIds, qty: exist.qty + 1} : item);
 		} else {
-			setCartItems([...cartItems, {menuItemId, optionIds, qty: 1, hash}]);
+			newCartItems = [...cartItems, {menuItemId, optionIds, qty: 1, hash}];
 		}
+
+		setCartItems(newCartItems)
+
+		await PATCH("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart", {
+			lineItems: newCartItems
+		});
 
 		setSelectedItemId("");
 	};
@@ -56,3 +64,18 @@ export default function Home () {
 		</Screen>
 	);
 }
+
+export const getServerSideProps = async (context) => {
+	const merchant = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant", {}, {});
+	const menu = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant/menus/testMenu", {}, {});
+
+	return {
+		props: {
+			merchant: merchant.body,
+			menu: menu.body,
+			menuItems: menu.body.menuItems
+		}
+	}
+};
+
+export default Home;

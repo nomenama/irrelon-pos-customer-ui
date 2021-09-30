@@ -4,10 +4,10 @@ import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Basket from "../components/Basket";
-import menuItems from "../sue.json";
+import {GET, PATCH} from "../services/api";
 
-export default function Home () {
-	const [cartItems, setCartItems] = useState([]);
+export default function Home ({cartItems: initialCartItems, menuItems}) {
+	const [cartItems, setCartItems] = useState(initialCartItems);
 	const [selectedItemId, setSelectedItemId] = useState("");
 
 	const addItemToBasket = (menuItemId, optionIds) => {
@@ -22,19 +22,36 @@ export default function Home () {
 
 		setSelectedItemId("");
 	};
-	const onIncreaseQuantity = (hash) => {
+
+	const onIncreaseQuantity = async (hash) => {
 		const cartItem = cartItems.find(item => item.hash === hash);
-		setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty + 1} : item));
+		const newCartItems = cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty + 1} : item);
+		setCartItems(newCartItems);
+
+		await PATCH("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart", {
+			lineItems: newCartItems
+		});
+
 		setSelectedItemId("");
 	};
-	const onDecreaseQuantity = (hash) => {
+
+	const onDecreaseQuantity = async (hash) => {
 		const cartItem = cartItems.find(item => item.hash === hash);
 
+		let newCartItems;
+
 		if (cartItem.qty === 1) {
-			setCartItems(cartItems.filter((item) => item.hash !== hash));
+			newCartItems = cartItems.filter((item) => item.hash !== hash);
 		} else {
-			setCartItems(cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty - 1} : item));
+			newCartItems = cartItems.map((item) => item.hash === hash ? {...cartItem, qty: cartItem.qty - 1} : item);
 		}
+
+		setCartItems(newCartItems);
+
+		await PATCH("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart", {
+			lineItems: newCartItems
+		});
+
 		setSelectedItemId("");
 	};
 
@@ -54,3 +71,16 @@ export default function Home () {
 		</Screen>
 	);
 }
+
+export const getServerSideProps = async (context) => {
+	const cartItemsResponse = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart/lineItems", {}, {});
+	const menuResponse = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant/menus/testMenu", {}, {});
+
+	return {
+		props: {
+			cartItems: cartItemsResponse.body,
+			menu: menuResponse.body,
+			menuItems: menuResponse.body.menuItems
+		}
+	}
+};
