@@ -52,7 +52,7 @@ export default function Home () {
 
 			<Header brand="shop" href="/" countCartItems={cartItems.length}/>
 			<Menu addItemToBasket={addItemToBasket} menuItems={menuItems} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId}/>
-			<Basket addItemToBasket={addItemToBasket} menuItems={menuItems} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems} id="cart"/>
+			<Basket addItemToBasket={addItemToBasket} menuItems={menuItems} onIncreaseQuantity={onIncreaseQuantity} onDecreaseQuantity={onDecreaseQuantity} cartItems={cartItems}/>
 			<Footer/>
 
 		</Screen>

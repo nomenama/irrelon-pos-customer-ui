@@ -11,7 +11,7 @@ const Footer = () => {
 
 			<Row className="container">
 				<Column className="copyright">
-					©2021 All right reserved.
+					©{new Date().getFullYear()} All right reserved.
 				</Column>
 
 				<Column className="loginSection">
