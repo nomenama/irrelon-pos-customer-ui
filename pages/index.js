@@ -4,7 +4,6 @@ import Menu from "../components/Menu";
 import Screen from "../components/Screen";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Basket from "../components/Basket";
 import {GET, POST, PATCH} from "../services/api";
 
 const Home = ({menu, menuItems}) => {
