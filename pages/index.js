@@ -65,8 +65,8 @@ const Home = ({menu, menuItems}) => {
 }
 
 export const getServerSideProps = async (context) => {
-	const merchant = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant", {}, {});
-	const menu = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant/menus/testMenu", {}, {});
+	const merchant = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/SueFoodTruck", {}, {});
+	const menu = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/SueFoodTruck/menus/Menu", {}, {});
 
 	return {
 		props: {

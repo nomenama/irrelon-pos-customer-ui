@@ -74,7 +74,7 @@ export default function Home ({cartItems: initialCartItems, menuItems}) {
 
 export const getServerSideProps = async (context) => {
 	const cartItemsResponse = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart/lineItems", {}, {});
-	const menuResponse = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/testMerchant/menus/testMenu", {}, {});
+	const menuResponse = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/SueFoodTruck/menus/Menu", {}, {});
 
 	return {
 		props: {
