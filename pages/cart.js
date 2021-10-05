@@ -82,5 +82,5 @@ export const getServerSideProps = async (context) => {
 			menu: menuResponse.body,
 			menuItems: menuResponse.body.menuItems
 		}
-	}
+	};
 };

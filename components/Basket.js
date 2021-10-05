@@ -75,8 +75,8 @@ const Basket = (props) => {
 						</Column>
 
 					</Row>
-					<Link href="/checkout">
-						<a className="payButton">Pay</a>
+					<Link href={"/checkout"}>
+						<a className="payButton"><i className="fas fa-credit-card" /> Pay  £{basketTotalPrice.toFixed(2)}</a>
 					</Link>
 
 				</Column>

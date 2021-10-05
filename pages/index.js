@@ -22,7 +22,7 @@ const Home = ({menu, menuItems}) => {
 			newCartItems = [...cartItems, {menuItemId, optionIds, qty: 1, hash}];
 		}
 
-		setCartItems(newCartItems)
+		setCartItems(newCartItems);
 
 		await PATCH("http://0.0.0.0:9010/fdb/irrelon-pos/collection/cart/myCart", {
 			lineItems: newCartItems
@@ -62,7 +62,7 @@ const Home = ({menu, menuItems}) => {
 
 		</Screen>
 	);
-}
+};
 
 export const getServerSideProps = async (context) => {
 	const merchant = await GET("http://0.0.0.0:9010/fdb/irrelon-pos/collection/merchant/SueFoodTruck", {}, {});
@@ -74,7 +74,7 @@ export const getServerSideProps = async (context) => {
 			menu: menu.body,
 			menuItems: menu.body.menuItems
 		}
-	}
+	};
 };
 
 export default Home;

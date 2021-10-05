@@ -9,7 +9,7 @@ const Menu = (props) => {
 		<Row className="menu">
 			<Row className="container">
 				{menuItems.map((menuItem) => (
-					<MenuItem key={menuItem._id} data={menuItem} addItemToBasket={addItemToBasket} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId} />
+					<MenuItem key={menuItem._id} data={menuItem} addItemToBasket={addItemToBasket} selectedItemId={selectedItemId} setSelectedItemId={setSelectedItemId}/>
 				))}
 			</Row>
 		</Row>

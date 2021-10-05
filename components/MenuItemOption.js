@@ -14,6 +14,6 @@ const MenuItemOption = (props) => {
 			<span className="itemPrice">+ £{twoDecimals(data.price)}</span>
 		</Row>
 	);
-}
+};
 
 export default MenuItemOption;

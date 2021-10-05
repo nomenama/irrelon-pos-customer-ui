@@ -25,13 +25,13 @@ const Row = (props) => {
 export default Row;
 
 Row.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  id: PropTypes.string,
-  onClick: PropTypes.func,
-  style: PropTypes.object
-}
+	children: PropTypes.node,
+	className: PropTypes.string,
+	id: PropTypes.string,
+	onClick: PropTypes.func,
+	style: PropTypes.object
+};
 
 Row.defaultProps = {
-  className: ""
-}
+	className: ""
+};

@@ -15,15 +15,13 @@ class MyDocument extends Document {
 
 				<Head>
 					<meta charSet="utf-8"/>
-{/*					<title>Irrelon Pay</title>
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>*/}
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 					<link rel="shortcut icon" sizes="16x16 32x32 48x48" href={`${BASE_PATH}/favicon.ico`} type="image/x-icon"/>
 					<meta property="og:image" content={`${BASE_PATH}/assets/logoColour.png`}/>
 				</Head>
 
 				<body className="appBody jsDisabled">
-					<NoScript/>
+					{/*<NoScript/>*/}
 					<Main/>
 					<NextScript/>
 				</body>

@@ -1,75 +1,104 @@
-import React, {useState} from "react";
-import Row from "./Row";
-import {CardElement, useStripe, useElements} from "@stripe/react-stripe-js";
-import {destroyCookie} from "nookies";
+import React, {useState, useEffect} from "react";
+import {
+	CardElement,
+	useStripe,
+	useElements
+} from "@stripe/react-stripe-js";
 
-const CARD_OPTIONS = {
-	iconStyle: "solid",
-	style: {
-		base: {
-			iconColor: "#c4f0ff",
-			color: "#fff",
-			fontWeight: 500,
-			fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-			fontSize: "16px",
-			fontSmoothing: "antialiased",
-			":-webkit-autofill": {color: "#fce883"},
-			"::placeholder": {color: "#87bbfd"}
-		},
-		invalid: {
-			iconColor: "#ffc7ee",
-			color: "#ffc7ee"
-		}
-	}
-};
-
-const CheckoutForm = (props) => {
-	const {paymentIntent} = props;
+export default function CheckoutForm () {
+	const [succeeded, setSucceeded] = useState(false);
+	const [error, setError] = useState(null);
+	const [processing, setProcessing] = useState("");
+	const [disabled, setDisabled] = useState(true);
+	const [clientSecret, setClientSecret] = useState("");
 	const stripe = useStripe();
 	const elements = useElements();
 
-	const [checkoutError, setCheckoutError] = useState();
-	const [checkoutSuccess, setCheckoutSuccess] = useState();
+	const createPaymentIntent = async () => {
+		const res = await fetch("/api/checkout-session", {
+			method: "POST",
+			body: JSON.stringify({
+				amount: 1000
+			})
+		});
+		const {clientSecret: clientSecretRes} = await res.json();
+		setClientSecret(clientSecretRes);
+	};
 
-	const handleSubmit = async (event) => {
-		event.preventDefault();
+	useEffect(() => {
+		createPaymentIntent();
+	}, []);
 
-		try {
-			const {error, paymentIntent: {status}} = await stripe.confirmCardPayment(paymentIntent.client_secret, {
-				payment_method: {
-					card: elements.getElement(CardElement)
+	const cardStyle = {
+		style: {
+			base: {
+				color: "#32325d",
+				fontFamily: "Open-sans, Lora, sans-serif",
+				fontSmoothing: "antialiased",
+				fontSize: "16px",
+				"::placeholder": {
+					color: "#32325d"
 				}
-			});
-
-			if (error) throw new Error(error.message);
-
-			if (status === "succeeded") {
-				destroyCookie(null, "paymentIntentId");
-				setCheckoutSuccess(true);
+			},
+			invalid: {
+				color: "#8e031e",
+				iconColor: "#8e031e"
 			}
-		} catch (err) {
-			setCheckoutError(err.message);
 		}
 	};
 
-	if (checkoutSuccess) return (
-		<Row className="container justifyCenter alignCenter">
-			<p>Payment Successful. Your order number is ...</p>
-		</Row>
-	);
+	const handleChange = async (event) => {
+		// Listen for changes in the CardElement
+		// and display any errors as the customer types their card details
+		setDisabled(event.empty);
+		setError(event.error ? event.error.message : "");
+	};
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		setProcessing(true);
+
+		const payload = await stripe.confirmCardPayment(clientSecret, {
+			payment_method: {
+				card: elements.getElement(CardElement)
+			}
+		});
+
+		if (payload.error) {
+			setError(`Payment failed ${payload.error.message}`);
+			setProcessing(false);
+		} else {
+			setError(null);
+			setProcessing(false);
+			setSucceeded(true);
+		}
+	};
 
 	return (
-		<form onSubmit={handleSubmit} className="paymentForm">
-			<fieldset className="FormGroup">
-				<div className="FormRow">
-					<CardElement option={CARD_OPTIONS}/>
+		<form className="paymentForm" id="payment-form" onSubmit={handleSubmit}>
+			<CardElement id="card-element" options={cardStyle} onChange={handleChange}/>
+			<button className="paymentButton"
+					disabled={processing || disabled || succeeded}
+					id="submit"
+			>
+        <span id="button-text">
+          {processing ? (
+			  <div className="spinner" id="spinner"/>
+		  ) : (
+			  "Pay now"
+		  )}
+        </span>
+			</button>
+			{/* Show any error that happens when processing the payment */}
+			{error && (
+				<div className="card-error" role="alert">
+					{error}
 				</div>
-			</fieldset>
-			<button className="payButton" type={"submit"} disabled={!stripe}>Pay Now</button>
-			{checkoutError && <span style={{color: "red"}}>{checkoutError}</span>}
-
+			)}
+			{/* Show a success message upon completion */}
+			<p className={succeeded ? "result-message" : "result-message hidden"}>
+				Payment successful, your order number is ...
+			</p>
 		</form>
 	);
-};
-
-export default CheckoutForm;
+}
