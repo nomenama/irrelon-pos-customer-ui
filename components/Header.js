@@ -20,9 +20,9 @@ const Header = (props) => {
 
 				<Column className="cart">
 					<Link href="/cart">
-						<a>
+						<a className={countCartItems === 0 ? "disabled" : "cartIcon"}>
 							<i className="far fa-cart-plus"/> {" "}
-							{countCartItems ? (<i className="fas fa-circle" />) : ("")}
+							{countCartItems ? (<i className="fas fa-circle"/>) : ("")}
 						</a>
 					</Link>
 				</Column>

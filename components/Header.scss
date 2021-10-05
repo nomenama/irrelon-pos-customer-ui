@@ -28,7 +28,12 @@
       justify-content: space-between;
       font-size: 26px;
 
-      a {
+      .disabled {
+        color: #ffffff;
+        pointer-events: none;
+      }
+
+      .cartIcon {
         text-decoration: none;
         position: relative;
 
