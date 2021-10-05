@@ -10,7 +10,6 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function Checkout () {
 	return (
-
 		<Screen>
 			<Head>
 				<title>Irrelon Pay || Checkout</title>
@@ -19,7 +18,8 @@ export default function Checkout () {
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
-			<Column className="container flex justifyCenter alignCenter">
+			<Column className="container flex justifySpaceBetween alignCenter">
+
 				<Elements stripe={stripePromise}>
 					<CheckoutForm/>
 				</Elements>
